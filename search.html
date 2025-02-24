@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heka - Recherche de Médicaments</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .header-content {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #3b82f6;
+        }
+
+        .cart-icon {
+            font-size: 1.25rem;
+            cursor: pointer;
+            color: #3b82f6;
+        }
+
+        /* Main content styles */
+        main {
+            max-width: 1024px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Search input styles */
+        .search-container {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 2rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        .search-input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #9ca3af;
+        }
+
+        /* Category filters */
+        .category-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .category-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: #f3f4f6;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #4b5563;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background-color: #e5e7eb;
+        }
+
+        .category-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        /* Medications grid */
+        .medications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .medication-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .medication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .medication-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .medication-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .medication-category {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .medication-price {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: #3b82f6;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #2563eb;
+        }
+
+        /* Responsive design */
+        @media (max-width: 640px) {
+            .medications-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="logo">Heka</h1>
+            <div class="cart-icon">🛒</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Rechercher un médicament...">
+            <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+        </div>
+
+        <div class="category-filters">
+            <button class="category-btn active">Tous</button>
+            <button class="category-btn">Antibiotiques</button>
+            <button class="category-btn">Antidouleur</button>
+            <button class="category-btn">Cardiovasculaire</button>
+            <button class="category-btn">Respiratoire</button>
+            <button class="category-btn">Digestif</button>
+        </div>
+
+        <div class="medications-grid">
+            <!-- Medication Cards will go here -->
+        </div>
+
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
