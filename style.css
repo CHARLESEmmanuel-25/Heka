@@ -18,10 +18,23 @@ body {
     padding: 0 20px;
 }
 
+
+
 /* Typography */
+
+.firttitle{
+    font-size: 4rem; /* Augmente la taille du texte */
+    margin-bottom: 1.5rem; /* Espacement sous le titre */
+    color: #f8f9f7; /* Couleur blanche pour un bon contraste avec l'image de fond */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombre du texte pour le rendre plus lisible */
+    font-weight: bold; /* Rend le texte en gras pour plus de visibilité */
+    letter-spacing: 2px; /* Espacement entre les lettres pour un effet plus dynamique */
+    text-transform: uppercase; /* Met le texte en majuscules pour un effet plus impactant */
+}
 h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: rgb(0, 0, 0);
 }
 
 h2 {
@@ -38,13 +51,19 @@ h3 {
 
 /* Navbar */
 .navbar {
-    background: white;
-    padding: 1rem 0;
+    background: #ffffff; /* Fond blanc pour la navbar */
+    padding: 1rem 2rem;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1px;
+    transition: background-color 0.3s ease; /* Transition douce */
+}
+
+.navbar:hover {
+    background-color: #f1f1f1; /* Couleur de fond au survol de la navbar */
 }
 
 .navbar .container {
@@ -54,26 +73,44 @@ h3 {
 }
 
 .nav-brand {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #06b6d4;
+    text-transform: uppercase; /* Met le texte en majuscules */
+    letter-spacing: 1px;
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
     align-items: center;
+    font-size: 1rem;
 }
 
+/* Liens de navigation */
 .nav-links a {
     text-decoration: none;
     color: #4b5563;
-    transition: color 0.3s;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
+/* Effet de survol sur les liens */
 .nav-links a:hover {
-    color: #06b6d4;
+    color: #ffffff;
+    background-color: #06b6d4;
+    transform: scale(1.05); /* Effet d'agrandissement */
 }
+
+.navbar .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #06b6d4;
+    cursor: pointer;
+}
+
 
 /* Buttons */
 .btn {
@@ -130,23 +167,41 @@ h3 {
 }
 
 .btn-outline-white:hover {
-    background: white;
+    background: rgb(255, 255, 255);
     color: #78D06D;
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #78D06D, #06b6d4);
-    color: white;
-    padding: 8rem 0 6rem;
-    text-align: center;
+    background-image: url('HEKA.png'); /* Remplace par le chemin correct de ton image */
+    background-size: cover; /* L'image couvre toute la section */
+    background-position: top center; /* Déplace l'image pour afficher la partie supérieure de l'image */
+    background-attachment: fixed; /* L'image reste fixe lors du défilement */
+    color: white; /* Assure que le texte reste lisible */
+    padding: 8rem 0 6rem; /* Espacement supérieur et inférieur */
+    text-align: center; /* Centrer le texte */
+    height: 100vh; /* L'image occupe toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre le contenu verticalement */
+    align-items: center; /* Centre le contenu horizontalement */
 }
 
+
 .hero .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Augmenter la taille pour plus de lisibilité */
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(33, 34, 37, 0.9); /* Garde une couleur neutre */
+    font-weight: 400; /* Légèrement plus léger pour un effet plus élégant */
+    line-height: 1.6; /* Augmente l'espacement entre les lignes pour plus de lisibilité */
+    letter-spacing: 0.5px; /* Légèrement plus d'espacement entre les lettres */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Ajoute un effet d'ombre léger pour améliorer la lisibilité */
+    max-width: 80%; /* Limite la largeur pour que le texte ne soit pas trop étendu */
+    margin: 0 auto 2rem; /* Centrer et espacer le sous-titre */
+    text-align: center; /* Centrer le texte */
+    padding: 0 1rem; /* Ajoute un peu de marge interne pour que le texte ne touche pas les bords */
 }
+
 
 .search-container {
     position: relative;
@@ -160,7 +215,8 @@ h3 {
     border: none;
     border-radius: 9999px;
     font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(88, 85, 85, 0.1);
+    background-color: rgb(210, 221, 237);
 }
 
 .search-button {
@@ -452,6 +508,8 @@ a {
 
 
 
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
@@ -485,6 +543,8 @@ a {
     .hero {
         padding: 6rem 0 4rem;
     }
+
+    
 
     .search-input {
         padding: 0.75rem 2.5rem 0.75rem 1rem;
