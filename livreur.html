@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription Livreur</title>
+  <link rel="stylesheet" href="stylelivreur.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-card">
+      <div class="form-header">
+        <h1>Rejoignez Notre Équipe</h1>
+        <p>Commencez à gagner en livrant avec nous</p>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="fullName">Nom Complet</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Entrez votre nom complet" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse Email</label>
+          <input type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Numéro de Téléphone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="transport">Mode de Transport</label>
+          <div class="select-wrapper">
+            <select id="transport" name="transport" required>
+              <option value="">Sélectionnez votre véhicule</option>
+              <option value="bicycle">Vélo</option>
+              <option value="motorcycle">Moto</option>
+              <option value="car">Voiture</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="transport-icons">
+          <div class="transport-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>
+            <span>Vélo</span>
+          </div>
+          <div class="transport-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3m3-6h7"/><path d="M12 17v-6"/><path d="M2 9h20"/></svg>
+            <span>Moto</span>
+          </div>
+          <div class="transport-option">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+            <span>Voiture</span>
+          </div>
+        </div>
+
+        <button type="submit">S'inscrire Maintenant</button>
+      </form>
+
+      <p class="terms">En vous inscrivant, vous acceptez nos Conditions d'Utilisation et notre Politique de Confidentialité</p>
+    </div>
+  </div>
+</body>
+</html>
